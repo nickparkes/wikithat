@@ -1,3 +1,4 @@
+header("access-control-allow-origin: *");
 var wikiApp = angular.module("wikiApp", []);
 
 var wikiController = wikiApp.controller("wikiController",
