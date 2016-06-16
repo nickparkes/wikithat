@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div ng-app="wikiApp" ng-controller="wikiController">
+        <script src="./angular.js"></script>
+        <script src="./app.js"></script>
+        <a class="link" ng-click="back()">back ({{previous}})</a>
+        <div ng-repeat="p in pages">
+            <div class="arrow">
+                {{p}}
+            </div>
+        </div>
+        <div class="centerContainer">
+            <form class="form-inline">
+                <div class="container">
+                    <div class="jumbotron">
+                        <h1>WikiThat</h1>
+                        <p>Paste the Url from the pages you wish use. Try to get to the other page in under 10 clicks!</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName2">Start: </label>
+                    <input type="text" class="form-control" id="start" placeholder="https://en.wikipedia.org/wiki/..." ng-model="startURL">
+                </div>
+                <p></p>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">End: </label>
+                    <input type="text" class="form-control" id="end" placeholder="https://en.wikipedia.org/wiki/..." ng-model="ender">
+                </div>
+                <button ng-click="begin()" type="submit" class="btn btn-default">Let's Start!</button>
+            </form>
+        </div>
+        <div class="centerContainer">
+            <div class="form-inline">
+                Clicks: {{counter}}
+                <p></p>
+                {{message}}
+            </div>
+        </div>
+        <div ng-repeat="(key, value) in links" class="floated">
+            <button title={{getTitle(key)}} ng-click="select(getHREF(key))">{{getTitle(key)}}</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
