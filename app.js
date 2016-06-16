@@ -2,6 +2,11 @@ var wikiApp = angular.module("wikiApp", []);
 
 var wikiController = wikiApp.controller("wikiController",
     function ($scope, $http) {
+      wikiApp.config(['$httpProvider', function($httpProvider) {
+      $httpProvider.defaults.useXDomain = true;
+      delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  }
+]);
         //$scope.startURL = "https://en.wikipedia.org/wiki/John_Lennon"
         $scope.counter = 0;
         $scope.ender;
