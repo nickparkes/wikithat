@@ -1,0 +1,26 @@
+.centerContainer{
+    text-align:center;
+}
+.centerContainer > * {
+    display: inline-block;
+}
+.floated{
+    float:left;
+    margin-right: 5px;
+}
+.form-control{
+    width: 300px;
+}
+.link{
+    color: blue;
+    text-decoration: underline;
+}
+.arrow > div{
+    float:left;
+}
+.arrow > div:before{
+    content: " > ";
+}
+.nav > div:first-child::before{
+    content: "";
+}
