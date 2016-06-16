@@ -3,7 +3,6 @@ var wikiApp = angular.module("wikiApp", []);
 var wikiController = wikiApp.controller("wikiController",
     function ($scope, $http) {
         //$scope.startURL = "https://en.wikipedia.org/wiki/John_Lennon"
-        header("access-control-allow-origin: *");
         $scope.counter = 0;
         $scope.ender;
         $scope.message;
